@@ -13,4 +13,7 @@ Gem::Specification.new do |spec|
 
   spec.files         = Dir['app/**/*', 'lib/**/*', 'config/**/*', 'README.md']
   spec.require_paths = ['lib']
+
+  spec.add_dependency 'faraday', '~> 0.9'
+  spec.add_dependency 'hashie', '~> 3.4'
 end
