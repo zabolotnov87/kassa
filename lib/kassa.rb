@@ -3,10 +3,13 @@ require 'faraday'
 require 'json'
 require 'hashie'
 require 'time'
+require 'rack/request'
+require 'rack/response'
 
 require_relative 'kassa/errors'
 require_relative 'kassa/configurable'
 require_relative 'kassa/client'
+require_relative 'kassa/webhooks'
 require_relative 'kassa/version'
 
 module Kassa

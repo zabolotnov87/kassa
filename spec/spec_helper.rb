@@ -1,4 +1,7 @@
 require 'bundler/setup'
+require 'pry'
+require 'rack/test'
+
 require 'kassa'
 
 RSpec.configure do |config|

@@ -17,4 +17,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'addressable', '~> 2.6'
   spec.add_dependency 'faraday', '~> 0.9'
   spec.add_dependency 'hashie', '~> 3.4'
+  spec.add_dependency 'rack', '>= 1.5', '< 3.0'
 end

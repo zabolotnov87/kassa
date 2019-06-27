@@ -4,5 +4,6 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'pry-byebug', '~> 3.6'
+gem 'rack-test', '~> 0.6'
 gem 'rspec', '~> 3.0'
 gem 'rubocop', '~> 0.71.0'

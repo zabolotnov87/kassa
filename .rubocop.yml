@@ -4,6 +4,10 @@ AllCops:
     - bin/rspec
     - bin/rubocop
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
