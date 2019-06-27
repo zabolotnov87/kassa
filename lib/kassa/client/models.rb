@@ -4,6 +4,7 @@ require_relative 'models/requests/confirmation'
 require_relative 'models/requests/payment'
 
 require_relative 'models/responses/base'
+require_relative 'models/responses/cancellation_details'
 require_relative 'models/responses/payment'
 
 module Kassa

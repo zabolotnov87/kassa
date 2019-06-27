@@ -1,14 +1,29 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
+require 'pry'
+require 'logger'
 require 'kassa'
+require 'securerandom'
 
-# You can add fixtures and/or initialization code here to make experimenting
-# with your gem easier. You can also use a different console, if you like.
+Kassa.configure do |config|
+  config.api_endpoint = ENV['API_ENDPOINT']
+  config.account_id = ENV['ACCOUNT_ID']
+  config.secret_key = ENV['SECRET_KEY']
+  config.logger = Logger.new(STDERR)
+end
 
-# (If you use this, don't forget to add pry to your Gemfile!)
-# require "pry"
-# Pry.start
+# amount = 2999
+# currency = 'RUB'
+# return_url = ENV['RETURN_URL']
 
-require 'irb'
-IRB.start(__FILE__)
+# request = Kassa::Requests::Payment.new.tap do |payment|
+#   payment.amount = { value: amount, currency: currency }
+#   payment.confirmation = { type: :redirect, return_url: return_url }
+# end
+
+# payment = Kassa.client.create_payment(request, idempotence_key: SecureRandom.uuid)
+#
+# Kassa.client.payment(payment.id)
+
+Pry.start(self)

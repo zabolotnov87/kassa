@@ -1,6 +1,8 @@
+require 'addressable'
 require 'faraday'
 require 'json'
 require 'hashie'
+require 'time'
 
 require_relative 'kassa/errors'
 require_relative 'kassa/configurable'
