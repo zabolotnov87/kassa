@@ -23,7 +23,7 @@ module Kassa
         setup_timeouts!(connection)
         setup_auth!(connection)
         setup_error_handling!(connection)
-        setup_filtration!(connection)
+        setup_log_filters!(connection)
         setup_headers!(connection)
 
         connection.adapter(Faraday.default_adapter)
@@ -44,10 +44,9 @@ module Kassa
       connection.response(:kassa_handle_http_error)
     end
 
-    def setup_filtration!(connection)
+    def setup_log_filters!(connection)
       connection.response(:logger, logger) do |logger|
-        logger.filter(/(password=)([^&]+)/, '\1[FILTERED]')
-        logger.filter(/(userName=)([^&]+)/, '\1[FILTERED]')
+        logger.filter(/(Authorization: )([^&]+)/, '\1[FILTERED]')
       end
     end
 
