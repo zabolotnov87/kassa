@@ -10,7 +10,7 @@ module Kassa
 
     def initialize(options = {})
       CONFIGURATION_OPTIONS.each do |attribute|
-        value = options[attribute] || Sberpay.send(attribute)
+        value = options[attribute] || Kassa.send(attribute)
         send("#{attribute}=", value)
       end
       connection
